@@ -1,19 +1,21 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react'; // useEffect and useState
 import {View, Text, FlatList, StyleSheet} from 'react-native';
 
 import Producer from './Producer';
 
-import {loadProducers} from '../../../services/loadData';
+//import {loadProducers} from '../../../services/loadData';
+import useProducers from '../../../hooks/useProducers';
 
 export default function Producers({header: Header}) {
-  const [title, setTitle] = useState('');
-  const [list, setList] = useState([]);
+  //const [title, setTitle] = useState('');
+  //const [list, setList] = useState([]);
 
-  useEffect(() => {
-    const returned = loadProducers();
-    setTitle(returned.title);
-    setList(returned.list);
-  }, []);
+  //useEffect(() => {                  //comented because created Hooks
+  //const returned = loadProducers();
+  //setTitle(returned.title);
+  //setList(returned.list);
+  //}, []);
+  const [title, list] = useProducers();
 
   const HeaderList = () => {
     return (
