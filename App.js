@@ -6,7 +6,7 @@ import AppRoutes from './src/routes/AppRoutes';
 export default function App() {
   return (
     <SafeAreaView style={{flex: 1}}>
-      <StatusBar backgroundColor={'green'} barStyle={'light-content'} />
+      <StatusBar backgroundColor={'#2a9f85'} barStyle={'light-content'} />
       <AppRoutes />
     </SafeAreaView>
   );

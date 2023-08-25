@@ -35,7 +35,7 @@ class Header extends React.Component {
 
 const styles = StyleSheet.create({
   header: {
-    backgroundColor: '#f6f6f6',
+    backgroundColor: '#dee4e2',
     padding: 16,
   },
   image: {
