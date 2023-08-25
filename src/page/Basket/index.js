@@ -5,20 +5,22 @@ import Header from './components/Header';
 import Details from './components/Details';
 import Item from './components/Item';
 
-export default function Basket({header, details, items}) {
+import mock from '../../mocks/basket';
+
+export default function Basket() {
   return (
     <View>
       <FlatList
-        data={items.list}
+        data={mock.items.list}
         renderItem={Item}
         keyExtractor={({id}) => id}
         ListHeaderComponent={() => {
           return (
             <>
-              <Header {...header} />
+              <Header {...mock.header} />
               <View style={styles.container}>
-                <Details {...details} />
-                <Text style={styles.title}>{items.title}</Text>
+                <Details {...mock.details} />
+                <Text style={styles.title}>{mock.items.title}</Text>
               </View>
             </>
           );
