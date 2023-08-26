@@ -1,33 +1,49 @@
 import React, {useState} from 'react';
 import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {useNavigation} from '@react-navigation/native';
 
 import Stars from '../../../components/Stars';
+import StackRoutes from '../../../routes/StackRoutes';
+
+import eyes from '../../../assets/home/eyes.png';
 
 export default function Producer({id, name, image, distance, stars}) {
   const [select, setSelect] = useState(false);
+  const navigation = useNavigation();
 
   return (
-    <TouchableOpacity style={styles.card} onPress={() => setSelect(!select)}>
-      <Image source={image} accessibilityLabel={name} style={styles.image} />
-      <View style={styles.information}>
-        <View>
-          <Text style={styles.name}>{name}</Text>
-          <Stars qtd={stars} editable={select} big={select} />
+    <View style={styles.container}>
+      <TouchableOpacity style={styles.card} onPress={() => setSelect(!select)}>
+        <Image source={image} accessibilityLabel={name} style={styles.image} />
+        <View style={styles.information}>
+          <View>
+            <Text style={styles.name}>{name}</Text>
+            <Stars qtd={stars} editable={select} big={select} />
+          </View>
+          <Text style={styles.distance}>{distance}</Text>
         </View>
-        <Text style={styles.distance}>{distance}</Text>
-      </View>
-    </TouchableOpacity>
+      </TouchableOpacity>
+      <TouchableOpacity
+        style={styles.containerEyes}
+        onPress={() => navigation.navigate('Loja')}>
+        <Image source={eyes} style={styles.eyes} />
+      </TouchableOpacity>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
+  container: {
+    flexDirection: 'row',
+  },
   card: {
     backgroundColor: '#f6f6f6',
     marginVertical: 8,
-    marginHorizontal: 16,
+    marginHorizontal: 8,
     borderRadius: 6,
     flexDirection: 'row',
     elevation: 6,
+    width: '85%',
   },
   image: {
     width: 70,
@@ -52,5 +68,19 @@ const styles = StyleSheet.create({
   distance: {
     fontSize: 12,
     lineHeight: 19,
+  },
+  containerEyes: {
+    backgroundColor: '#dee4e2',
+    marginVertical: 40,
+    borderRadius: 6,
+    flexDirection: 'row',
+    elevation: 6,
+    width: '10%',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  eyes: {
+    width: 30,
+    height: 30,
   },
 });

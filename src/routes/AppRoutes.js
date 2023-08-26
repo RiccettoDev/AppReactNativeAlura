@@ -3,7 +3,8 @@ import {Image, View} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
-import TheProducers from '../page/TheProducers';
+import StackRoutes from './StackRoutes';
+//import TheProducers from '../page/TheProducers';
 import Basket from '../page/Basket';
 
 import homeIcon from '../assets/icons/home.png';
@@ -21,7 +22,7 @@ export default function AppRoutes() {
         }}>
         <Tab.Screen
           name="Produtores"
-          component={TheProducers}
+          component={StackRoutes}
           options={{
             tabBarInactiveBackgroundColor: '#42b38e',
             tabBarActiveBackgroundColor: '#2a9f85',
