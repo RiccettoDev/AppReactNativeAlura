@@ -1,3 +1,4 @@
+import {useNavigation} from '@react-navigation/native';
 import React from 'react';
 import {View, Text, Image, StyleSheet, TouchableOpacity} from 'react-native';
 
@@ -9,6 +10,8 @@ export default function Details({
   price,
   button,
 }) {
+  const navigation = useNavigation();
+
   return (
     <View style={styles.basket}>
       <Text style={styles.nameBasket}>{nameBasket}</Text>
@@ -19,7 +22,9 @@ export default function Details({
       <Text style={styles.description}>{description}</Text>
       <Text style={styles.price}>{price}</Text>
 
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => navigation.navigate('Pedido feito com sucesso!')}>
         <Text style={styles.txtButton}>{button}</Text>
       </TouchableOpacity>
     </View>
