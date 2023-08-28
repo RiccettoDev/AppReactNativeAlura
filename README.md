@@ -4,6 +4,8 @@
 
 ## App:
 
+![App](https://github.com/RiccettoDev/AppReactNativeAlura/assets/142124768/4ed48da1-a375-4fc7-8ace-86bca244e9d3)
+
 # Configuration React Native CLI
 
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
