@@ -3,7 +3,6 @@ import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 
 import Stars from '../../../components/Stars';
-import StackRoutes from '../../../routes/StackRoutes';
 
 import eyes from '../../../assets/home/eyes.png';
 
@@ -25,7 +24,7 @@ export default function Producer({id, name, image, distance, stars}) {
       </TouchableOpacity>
       <TouchableOpacity
         style={styles.containerEyes}
-        onPress={() => navigation.navigate('Loja')}>
+        onPress={() => navigation.navigate('Loja', {image, name, distance})}>
         <Image source={eyes} style={styles.eyes} />
       </TouchableOpacity>
     </View>
