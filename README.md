@@ -4,7 +4,7 @@
 
 ## App:
 
-![App](https://github.com/RiccettoDev/AppReactNativeAlura/assets/142124768/4ed48da1-a375-4fc7-8ace-86bca244e9d3)
+<img src="/src/assets/readme/App.gif" width=320 heigth=696>
 
 # Configuration React Native CLI
 
